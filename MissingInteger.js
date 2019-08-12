@@ -15,8 +15,10 @@ Write an efficient algorithm for the following assumptions:
 
 N is an integer within the range [1..100,000];
 each element of array A is an integer within the range [−1,000,000..1,000,000].
-*/
 
+其实这题是 leetcode 41
+*/
+/*Space: O(n) */
 function solution(A) {
     // write your code in JavaScript (Node.js 8.9.4)
     let res = [];
@@ -32,3 +34,22 @@ function solution(A) {
     }
     return 1;
 }
+
+
+/*space: O(1)*/
+var missingInteger = function (arr) {
+  let n = arr.length;
+  for(let i = 0; i < arr.length; i++) {
+    while(arr[i] >= 1 && arr[i] <= n && arr[arr[i] - 1] !== arr[i]) {
+      let temp = arr[arr[i] - 1];
+      arr[arr[i] - 1] = arr[i];
+      arr[i] = temp;
+    }
+  }
+  for(let i = 0; i < arr.length; i++) {
+    if(arr[i] !== i + 1) return i + 1;
+  }
+  return n + 1;
+}
+var nums = [1,2,0];
+missingInteger(nums)
