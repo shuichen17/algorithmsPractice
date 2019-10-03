@@ -27,7 +27,8 @@ function solution(A) {
             res[A[i]] = true;
         }
     }
-```javaScript
+    
+```
     for(let i = 1; i <= res.length; i++) {
         if(res[i] === undefined) {
             return i;
