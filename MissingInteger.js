@@ -37,6 +37,7 @@ function solution(A) {
 }
 ```
 
+
 /*space: O(1)*/
 var missingInteger = function (arr) {
   let n = arr.length;
