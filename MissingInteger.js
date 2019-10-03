@@ -27,6 +27,7 @@ function solution(A) {
             res[A[i]] = true;
         }
     }
+    ```
     for(let i = 1; i <= res.length; i++) {
         if(res[i] === undefined) {
             return i;
@@ -34,7 +35,7 @@ function solution(A) {
     }
     return 1;
 }
-
+```
 
 /*space: O(1)*/
 var missingInteger = function (arr) {
